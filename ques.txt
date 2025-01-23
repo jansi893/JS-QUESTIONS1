@@ -1,0 +1,99 @@
+1.⁠ ⁠Basic Console Usage
+	1.	Write a program that calculates the sum of 5 + 10, assigns it to a variable, and logs the result to the console.
+ 
+ answer => var a = 20;
+var b = 30;
+var c = a + b;
+console.log(c);
+
+2.⁠ ⁠Variables and Data Types
+	2.	Declare a variable age with the value 25. Then, reassign it to 30 and log its type using typeof.
+
+answer=> var age = 25;
+age = 30;
+console.log(age);
+console.log(typeof(age));
+
+3.⁠ ⁠Loops
+	3.	Write a for loop that prints all the odd numbers between 1 and 20.
+
+	answer=> for(var i = 1; i <= 20; i++){
+    if(i % 2 === 1){
+        console.log(i);
+    }
+}        
+	4.	Create a while loop that starts at 10 and decreases by 2 until it reaches 0. Log each step.
+
+	answer=>var i = 10;
+while(i>=0){
+    console.log(i);
+    i-=2
+}
+
+4.⁠ ⁠Arrays
+	5.	Create an array of your favorite fruits (at least 5).
+	•	Add a new fruit to the end of the array.
+	•	Remove the first fruit from the array.
+	•	Log the updated array.
+
+answer=> var arr = ['apple', 'banana','cherry',' grapes','mango'];
+arr.push('apple');
+arr.shift('apple');
+console.log(arr);
+
+	6.	Write a program that iterates over an array of numbers and prints only the numbers greater than 10.
+
+	answer=>
+	var arr = [0,1,11,2,22,3,33,4,44,5,55,6,66,7,77,8,88,9,99,100];
+      var i = 0;
+      while(i<arr.length){
+if (arr[i]> 10){
+    console.log(arr[i]);
+}
+i++
+      } 
+
+5.⁠ ⁠Functions
+	7.	Write a function multiplyNumbers that takes two numbers as arguments and returns their product. Test the function with values 5 and 6.
+
+answer=>	function abcd(a,b){
+    return a*b
+}
+console.log(abcd(5,6)) ;
+ 
+
+6.⁠ ⁠Conditionals
+	8.	Write an if...else statement to check if a number is divisible by 3. If it is, log “Divisible by 3,” otherwise log “Not divisible by 3.”
+
+answer=>var i = 30;
+if (i % 3 === 0) {
+    console.log("Divisible by 3");
+}
+else{
+    console.log(" Not Divisible by 3");
+}
+ 
+
+7.⁠ ⁠Object Basics
+	9.	Create an object book with properties: title, author, and year. Add a new property genre with the value fiction and log the updated object.
+	answer=>var book={
+    title: "The class",
+    author: "jansi",
+    year: 2004
+
+};
+book.genre = "fiction";
+console.log(book);
+
+8.⁠ ⁠String Manipulation
+	10.	Write a program that takes a string JavaScript is fun! and:
+	•	Converts it to all uppercase.
+	•	Extracts the first 10 characters.
+	•	Replaces the word fun with awesome.
+
+	answer=>var js = 'JavaScript is fun';
+console.log(js.slice(0,11));
+console.log(js.replace('fun', 'awesome'));
+console.log(js.toUpperCase());
+
+Let me know if you’d like solutions or hints for these questions!

@@ -55,115 +55,391 @@ console.log("hello");
     element.classList.toggle('active');
     });
 
-Selecting the Element
-	1.	Write a function to select a <div> with the ID container and log it to the console.
-	=>const container = document.getElementById('container');
+
+
+1.   Write a function to select a <div> with the ID container and log it to the console.
+const container = document.getElementById('container');
 function selectDiv(container){
     console.log("hello world");
 }
 selectDiv(container);
 
-	2.	Select all <li> elements inside a <ul> with the class menu and log them as an array.
-	=>const menu = document.querySelector(".menu");
+2.   Select all <li> elements inside a <ul> with the class menu and log them as an array.
+const menu = document.querySelector(".menu");
 const listItems = Array.from(menu.children);
 console.log(listItems);
 
-	3.	Write code to select the first <h1> element on a webpage and change its color to blue.
-	=>const firsth1 = document.querySelector(".first");
- firsth1.style.color = "blue";
+3.   Write code to select the first <h1> element on a webpage and change its color to blue.
+const firsth1 = document.querySelector(".first");
+firsth1.style.color = "blue";
 
-
-	4.	Select the element with the class card and add a border to it using JavaScript.
-	const card = document.querySelector(".card");
+4.   Select the element with the class card and add a border to it using JavaScript.
+const card = document.querySelector(".card");
 card.style.border = "1px solid black";
 
-	5.	Write a function to log all elements with the tag name button to the console.
-	=>const buttons = document.querySelectorAll("button");
+5.   Write a function to log all elements with the tag name button to the console.
+const buttons = document.querySelectorAll("button");
 function logButtons(buttons){
     console.log("hello");
     }
     logButtons();
 
-
-Changing the Text in JS
-	6.	Select a <p> element with the class description and change its text to "Updated description".
-	=>const para = document.querySelector(".Discription");
+6.	Select a <p> element with the class description and change its text to "Updated description".
+const para = document.querySelector(".Discription");
 para.textContent = "Updated description";
 
-	7.	Write a function that takes an ID of an element and changes its text to "Hello, World!".
-	=>function changeText(){
+7.	Write a function that takes an ID of an element and changes its text to "Hello, World!".
+function changeText(){
     const element = document.querySelector("#element")
     element.textContent = "Hello, World!";
 }
 changeText();
 
-	8.	Select a button with the ID submit and set its text to "Submit Form".
-	=>const submit = document.querySelector('#submit');
+8.	Select a button with the ID submit and set its text to "Submit Form".
+const submit = document.querySelector('#submit');
 submit.textContent = "Submit Form";
 
-	9.	Replace the text inside a <span> element with the class price to "₹499".
-	=>const span = document.querySelector(".span");
+9.	Replace the text inside a <span> element with the class price to "₹499".
+const span = document.querySelector(".span");
 span.textContent = "$499";
 
-	10.	Write a function to change the text of all <h2> elements on the page to "Welcome to My Page".
-	=>      const headings = document.querySelectorAll('.h2s');
-      headings.forEach(function(headings) {
-        headings.textContent = "Welcome to My Page";
+10.	Write a function to change the text of all <h2> elements on the page to "Welcome to My Page".
+  const headings = document.querySelectorAll('.h2s');
+  headings.forEach(function(headings) {
+    headings.textContent = "Welcome to My Page";
+});
+
+11.	Select a <div> with the ID content and replace its inner HTML with a new <h2> and <p> element.
+const div = document.querySelector("#content");
+div.innerHTML = "<h2>Heading</h2><p>Paragraph</p>";
+
+12.	Write a function that takes an element ID and replaces its content with a <button>Click Me!</button>.
+const element = document.querySelector('#element');
+function replace(element) {
+    element.innerHTML = "<button>Click Me!</button>";
+    };
+    replace(element);
+
+13.	Select an element with the class info and append a <strong> tag with the text "Important" inside it.
+const information = document.querySelector(".info");
+const strong = document.createElement("strong");
+strong.textContent = "Important";
+information.appendChild(strong);
+
+14.	Replace the content of a <div> with ID main with an unordered list containing three <li> items.
+const main = document.querySelector("#main");
+const ul = document.createElement("ul");
+const li1 = document.createElement("li");
+const li2 = document.createElement("li");
+const li3 = document.createElement("li");
+li1.textContent = "Item 1";
+li2.textContent = "Item 2";
+li3.textContent = "Item 3";
+ul.appendChild(li1);
+ul.appendChild(li2);
+ul.appendChild(li3);
+main.innerHTML = "";
+main.appendChild(ul);
+
+OR
+
+const main = document.querySelector("#main");
+main.innerHTML = "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>";
+
+15.	Create a function that takes an ID and adds an <img> tag with a placeholder image URL inside the element.
+function addPlacehoderImage(elementId) {
+    const element = document.getElementById(elementId);
+    if(element){
+        const img = document.createElement("img");
+        img.src = "https://images.unsplash.com/photo-1736771932149-26287a969645?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8";  // Placeholder image URL
+        img.alt = "Placeholder image";
+        element.appendChild(img);
+    } else {
+        console.log("Element not found");
+    }
+}
+
+addPlacehoderImage("elementid");
+
+16.	Select a <div> with the class box and change its background color to red.
+const box = document.querySelector(".box");
+box.style.backgroundColor = "red";
+
+17.	Write a function that takes an element ID and sets its font size to 20px.
+function selectFont(){
+    const element = document.querySelector("h1");
+    element.style.fontSize = "20px";
+}
+selectFont();
+
+18.	Select all <h1> elements and change their text color to green.
+const h1s = document.querySelectorAll(".h1s");
+h1s.forEach((h1) => {
+    h1.style.color = "green";
+    });
+
+19.	Change the display property of an element with the class hidden to block.
+const display = document.querySelector(".box");
+display.style.display = "block";
+
+20.	Write a function that toggles the visibility of an element (hide/show) when called.
+function toggleVisiblity(){
+    const btn = document.querySelector(".btn");
+if(btn.style.display === 'none'){
+btn.style.display = "block";
+} else {
+btn.style.display = "none";
+}
+}
+
+21.	Add a click event listener to a button with the ID login that logs "Button clicked!" to the console.
+const btn = document.querySelector(".login");
+btn.addEventListener("click",function(){
+    console.log("button clicked!");
+})
+
+22.	Write a function to remove a mouseover event listener from an element with the class hoverable.
+var elem = document.querySelector(".hoverable");
+elem.addEventListener("mouseover",print);
+function print()
+{
+    console.log("hello");
+    mouseoverRemove();
+}
+function mouseoverRemove()
+{
+    elem.removeEventListener("mouseover",print);
+}
+
+
+23.	Add a submit event listener to a form with the ID signup that prevents the default form submission.
+let submit= document.querySelector("#signup");
+submit.addEventListener("submit",function(ev){
+   ev.preventDefault();
+})
+
+
+24.	Attach a keydown event listener to the document and log the key pressed to the console.
+document.addEventListener("keydown",function(event){
+        console.log(`key pressed ${event.key}`);
+    });
+
+25.	Write a function that adds a click event listener to all buttons on the page and changes their background to yellow when clicked.
+document.querySelectorAll("button").forEach((button)=>{
+button.addEventListener("click",()=>{
+    button.style.backgroundColor = "yellow";
+})
+});
+
+
+26.	Add a class highlight to all <p> elements with the class paragraph.
+const p = document.querySelectorAll(".para").forEach((p)=>{
+    p.classList.add('highlight');
+});
+
+27.	Write a function to toggle the class active on an element when clicked.
+const button = document.querySelector(".action");
+function toggleActive(element){
+element.addEventListener("click",()=>{
+element.classList.toggle('active');
+});
+}
+    toggleActive(button);
+
+28.	Remove the class hidden from a <div> with the ID popup.
+document.getElementById("popup").classList.remove("hidden");
+
+29.	Add a class selected to all <li> elements inside a <ul> with the class list.
+document.querySelectorAll("ul.list li").forEach((li)=>{
+    li.classList.add('selected');
+});
+
+
+30.	Write a function that removes the class disabled from a button with the ID submit.
+function enableSubmitButton(){
+    const submitBtn = document.getElementById("submit");
+    submitBtn.classList.remove("disabled");
+};
+    enableSubmitButton();
+
+31.	Write code to add the ID featured to a <div> with the class hero.
+document.querySelector(".hero").id = "featured";
+
+32.	Remove the ID old-id from an element and add a new ID new-id to it.
+document.getElementById("old-id").id = "new-id";
+
+33.	Write a function that sets a unique ID to each <li> in an ordered list.
+function setID(){
+    const li = document.querySelectorAll("li");
+    li.forEach((item, index) => {
+        item.id = index + 1;
+        console.log(item.id);
+    });
+}
+setID();
+
+34.	Add an ID header-main to the first <h1> element on the page.
+const firsth1 = document.querySelector("h1");
+if(firsth1){
+    firsth1.id = "header-main";
+}
+
+35.	Remove the ID from an element with the class removable.
+const remove = document.querySelector(".removable");
+remove.id = "";
+
+36.	Add a src attribute with the value "image.jpg" to an <img> element with the ID thumbnail.
+const img = document.createElement("img");
+img.setAttribute =("src", "image.jpg");
+
+37.	Remove the disabled attribute from a button with the class enable-button.
+let button = document.createElement(".enable-button");
+button.removeAttribute("disabled");
+
+38.	Write a function to set a data-user-id attribute with the value "12345" to a <div> with the class profile.
+function setId(){
+    const profile = document.querySelector(".profile");
+    profile.setAttribute("data-user-id", "12345");
+};
+setId();
+
+
+39.	Select a <a> tag and add a target="_blank" attribute to open the link in a new tab.
+const a = document.querySelector(a);
+a.setAttribute("target", "_blank");
+
+40.	Remove the required attribute from all <input> elements inside a form with the ID registration.
+const input =document.querySelectorAll("input").forEach((register)=>{
+    register.removeAttribute("required");
+});
+
+
+41.	Write a function to add an event listener to all buttons, and when clicked, toggle the class active on them.
+function toggleActive(){
+    const buttons = document.querySelectorAll("button").forEach((button)=>{
+button.addEventListener("click",function(){
+    button.classList.toggle('active');
+})
+    });
+}
+toggleActive();
+
+42.	Create a function to select a <div> by ID, add a class selected, change its text to "Hello", and set its background color to yellow.
+function abcd(){
+    const div = document.querySelector("#elem");
+    div.classList.add("selected");
+    div.textContent ="hello";
+    div.style.backgroundColor = "yellow";
+};
+abcd();
+
+43.	Add a click event listener to all <li> elements inside a <ul> that logs the text content of the clicked item.
+const li = document.querySelectorAll("li");
+li.forEach((item)=>{
+    item.addEventListener("click",function(){
+        console.log(item.textContent);
+    });
     });
 
 
-Changing the HTML in JS
-	11.	Select a <div> with the ID content and replace its inner HTML with a new <h2> and <p> element.
-	12.	Write a function that takes an element ID and replaces its content with a <button>Click Me!</button>.
-	13.	Select an element with the class info and append a <strong> tag with the text "Important" inside it.
-	14.	Replace the content of a <div> with ID main with an unordered list containing three <li> items.
-	15.	Create a function that takes an ID and adds an <img> tag with a placeholder image URL inside the element.
+44.	Write a function to add a new <p> element inside a <div> with the ID content and set its text to "New Paragraph".
+function para(){
+    const div = document.querySelector("#content");
+    const p = document.createElement("p");
+    p.textContent = "New Paragraph";
+    div.appendChild(p);
+}
+para();
 
-Changing the CSS via JS
-	16.	Select a <div> with the class box and change its background color to red.
-	17.	Write a function that takes an element ID and sets its font size to 20px.
-	18.	Select all <h1> elements and change their text color to green.
-	19.	Change the display property of an element with the class hidden to block.
-	20.	Write a function that toggles the visibility of an element (hide/show) when called.
+45.	Add a mouseover event listener to an <img> that changes its src attribute to "hover.jpg".
+ const img = document.querySelector("img");
+img.addEventListener("mouseover",function(){
+    img.setAttribute("src", "hover.jpg");
+});
 
-Adding/Removing Event Listeners
-	21.	Add a click event listener to a button with the ID login that logs "Button clicked!" to the console.
-	22.	Write a function to remove a mouseover event listener from an element with the class hoverable.
-	23.	Add a submit event listener to a form with the ID signup that prevents the default form submission.
-	24.	Attach a keydown event listener to the document and log the key pressed to the console.
-	25.	Write a function that adds a click event listener to all buttons on the page and changes their background to yellow when clicked.
 
-Adding/Removing Classes to HTML Elements
-	26.	Add a class highlight to all <p> elements with the class paragraph.
-	27.	Write a function to toggle the class active on an element when clicked.
-	28.	Remove the class hidden from a <div> with the ID popup.
-	29.	Add a class selected to all <li> elements inside a <ul> with the class list.
-	30.	Write a function that removes the class disabled from a button with the ID submit.
+46.	Write a function that creates a to-do list by appending <li> elements dynamically inside a <ul> with the ID todo-list.
+function TodoList(items){
+    const ul = document.querySelector("#todo-list");
+        const li = document.createElement("li");
+        li.textContent = items;
+        ul.appendChild(li);
 
-Adding/Removing IDs to HTML Elements
-	31.	Write code to add the ID featured to a <div> with the class hero.
-	32.	Remove the ID old-id from an element and add a new ID new-id to it.
-	33.	Write a function that sets a unique ID to each <li> in an ordered list.
-	34.	Add an ID header-main to the first <h1> element on the page.
-	35.	Remove the ID from an element with the class removable.
+}
+TodoList("grocery");
+TodoList("food");
 
-Adding/Removing Attributes to HTML Elements
-	36.	Add a src attribute with the value "image.jpg" to an <img> element with the ID thumbnail.
-	37.	Remove the disabled attribute from a button with the class enable-button.
-	38.	Write a function to set a data-user-id attribute with the value "12345" to a <div> with the class profile.
-	39.	Select a <a> tag and add a target="_blank" attribute to open the link in a new tab.
-	40.	Remove the required attribute from all <input> elements inside a form with the ID registration.
+47.	Create a function that validates an email input field by adding/removing a class error based on the input value.
+function abcd(){
+    const input = document.querySelector("#email");
 
-Combining Multiple Topics
-	41.	Write a function to add an event listener to all buttons, and when clicked, toggle the class active on them.
-	42.	Create a function to select a <div> by ID, add a class selected, change its text to "Hello", and set its background color to yellow.
-	43.	Add a click event listener to all <li> elements inside a <ul> that logs the text content of the clicked item.
-	44.	Write a function to add a new <p> element inside a <div> with the ID content and set its text to "New Paragraph".
-	45.	Add a mouseover event listener to an <img> that changes its src attribute to "hover.jpg".
+    input.addEventListener("input", function(event){
+        const value = event.target.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(emailRegex.test(value)){
+            input.classList.remove("error");
+        }
+        else{
+            input.classList.add("error");
+        }
+        })
+}
 
-Real-Life Scenarios
-	46.	Write a function that creates a to-do list by appending <li> elements dynamically inside a <ul> with the ID todo-list.
-	47.	Create a function that validates an email input field by adding/removing a class error based on the input value.
-	48.	Write code to create a modal popup by adding a new <div> with some content and a close button when a button is clicked.
-	49.	Build a function that changes the theme of a webpage (light/dark mode) by toggling classes on the <body> element.
-	50.	Create a dropdown menu where clicking an item highlights it and logs its text to the console.        
+48.	Write code to create a modal popup by adding a new <div> with some content and a close button when a button is clicked.
+function abcd(){
+    const button = document.querySelector("#myBtn");
+    button.addEventListener("click",function(){
+        const div = document.createElement("div");
+        div.classList.add("modal");
+        div.innerHTML = "<p>Modal content</p><button>Close</button>";
+        document.body.appendChild(div);
+        const closeButton = div.querySelector("button");
+        closeButton.addEventListener("click",function(){
+             div.remove();
+             });
+    })
+}
+abcd();
+
+49.	Build a function that changes the theme of a webpage (light/dark mode) by toggling classes on the <body> element.
+
+////  difference between array and nodelist -nodelist is a special data structiom in js which can hold html elenents as group
+but array in js although looks similar but have a fundamental difference,that they have are used for js data types
+to convert the nodelist use(...) to array  ////
+
+function theme(){
+    const btn =document.querySelector("button");
+    const body = document.body;
+    btn.addEventListener("click",function(){
+       const classes =[...document.body.classList];
+       if(classes.indexOf("light") !== -1){
+        body.classList.remove("light");
+        body.classList.add("dark");
+       }
+       else{
+        body.classList.remove("dark");
+        body.classList.add("light");
+       }
+    })
+}
+
+theme();
+
+50.	Create a dropdown menu where clicking an item highlights it and logs its text to the console.
+function dropdown() {
+	const dropdown = document.querySelector(".dropdown");
+	// const button = document.querySelector(".dropbtn");
+	const items = document.querySelectorAll("a");
+	items.forEach(function (item) {
+		item.addEventListener("click", function () {
+			console.log(item.textContent);
+			item.classList.add("highlight");
+
+		});
+	});
+
+}
+
+dropdown();
+
+
